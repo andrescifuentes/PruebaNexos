@@ -1,0 +1,61 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Producto</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Lista Producto</h5>
+
+    <div class="my-2  test-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear
+        Producto</button>
+
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOMBRE PRODUCTO</th>
+          <th>CANTIDAD</th>
+          <th>FECHA INGRESO</th>
+          <th>USUARIO</th>
+          <th>SELECT</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor=" let cliente of clientes">
+          <td>{{cliente.id}}</td>
+          <td>{{cliente.nombre_producto}}</td>
+          <td>{{cliente.cantidad}}</td>
+          <td>{{cliente.fch_ingreso}}</td>
+          <td>{{cliente.usuario}}</td>
+          <td> 
+            <div class="form-check">
+              <input  
+                class="form-check-input" 
+                type="checkbox"
+                (ngModule)="select($event) "
+              >
+            </div>   
+          </td>
+         
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<div class="d-flex">
+
+  <div class="my-2  test-left">
+    <Button class="btn btn-rounded btn-primary" (click) = "editarProducto()">Editar Producto</Button>
+  </div>
+
+  <div class="my-2  test-left">
+    <Button class="btn btn-rounded btn-primary" type="button"> Eliminar Producto</Button>
+ </div>
+ 
+</div>
